@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: loki
+  namespace: flux-system
+spec:
+  interval: 1h0m0s
+  path: ./charts/loki
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: loki-app
+  validation: client
+
